@@ -37,6 +37,7 @@ export default defineConfig({
         // Automatically import customized style files for style overriding
         additionalData: `
           @use "@/styles/element/index.scss" as *;
+          @use "@/styles/var.scss" as *;
         `,
       }
     }
