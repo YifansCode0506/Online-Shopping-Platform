@@ -3,7 +3,7 @@
   // import { onMounted } from 'vue';
   // import { ref } from 'vue';
   import { useCategoryStore } from '@/stores/category';
-import { useScroll } from '@vueuse/core'
+  import { useScroll } from '@vueuse/core'
 
   // const categoryList = ref([]);
   // const getCategory = async () =>{
