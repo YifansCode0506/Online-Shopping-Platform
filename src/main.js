@@ -8,13 +8,13 @@ import router from './router'
 
 import '@/styles/common.scss'
 
-//
-import { getCategoryAPI } from "@/apis/testAPI";
+//test API function
+// import { getCategoryAPI } from "@/apis/testAPI";
 
-getCategoryAPI().then(res => {
-    // console.log(res);
+// getCategoryAPI().then(res => {
+//     // console.log(res);
     
-})
+// })
 
 const app = createApp(App)
 
