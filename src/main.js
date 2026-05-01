@@ -10,8 +10,9 @@ import '@/styles/common.scss'
 
 //
 import { getCategoryAPI } from "@/apis/testAPI";
+
 getCategoryAPI().then(res => {
-    console.log(res);
+    // console.log(res);
     
 })
 
