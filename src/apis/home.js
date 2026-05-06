@@ -12,8 +12,14 @@ export function getBannerAPI (){
  * @return {*}
  */
 
-export const findNewAPI = ()=> {
+export const News = ()=> {
   return httpInstance({
     url: 'home/new'
+  })
+}
+
+export const Recom = ()=> {
+  return httpInstance({
+    url: 'home/hot'
   })
 }
