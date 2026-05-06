@@ -15,15 +15,5 @@ import HomePanel from './components/HomePanel.vue'
   <HomeNew />
   <HomeHot />
   <homeProduct />
-  <HomePanel title="xinxianhaowu" sub-title="xinxianhaowu">
-    <div>
-      woshixinxianhaowu
-    </div>
-  </HomePanel>
-  <HomePanel title="renqituijian" sub-title="xinxianhaowu">
-    <div>
-      woshixinxianhaowu
-    </div>
-  </HomePanel>
-  <!-- test panel components -->
+  <HomePanel />
 </template>
