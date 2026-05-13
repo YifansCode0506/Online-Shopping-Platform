@@ -8,6 +8,7 @@ import SubCategory from '@/views/SubCategory/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  // The position of the correspondence relationship of path and component 
   routes: [
    {
       path: '/',
@@ -31,7 +32,14 @@ const router = createRouter({
       path: '/login',
       component: Login,
     }
-],
+  ],
+
+  // router scroll behaviour
+  scrollBehavior(){
+    return {
+      top: 0
+    }
+  }
 })
 
 export default router
