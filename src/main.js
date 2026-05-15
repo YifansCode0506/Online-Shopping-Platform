@@ -2,15 +2,15 @@
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import App from './App.vue'
 import router from './router'
 
 
-//Import the initialization style file
+// Import the initialization style file
 import '@/styles/common.scss'
 
-//test API function
+// test API function
 // import { getCategoryAPI } from "@/apis/testAPI";
 
 // getCategoryAPI().then(res => {
@@ -18,16 +18,18 @@ import '@/styles/common.scss'
     
 // })
 
-//Introduce the lazy loading directive plugin and register it
+// Introduce the lazy loading directive plugin and register it
 import { lazyPlugin } from './directives'
 
-//Introduce global component plugin
+// Introduce global component plugin
 import { componentPlugin } from'@/components'
 
 const app = createApp(App)
 
-
-app.use(createPinia())
+const pinia = createPinia()
+// 注册持久化插件
+pinia.use(piniaPluginPersistedstate)
+app.use(pinia)
 app.use(router)
 app.use(lazyPlugin)
 app.use(componentPlugin)
