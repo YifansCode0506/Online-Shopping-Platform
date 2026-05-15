@@ -4,6 +4,7 @@
   import { onMounted, ref } from 'vue';
   import { useRoute } from 'vue-router';
   import ImageView from '@/components/ImageView/index.vue'
+  import XtxSku from '@/components/XtxSku/index.vue'
 
   const goods = ref({});
   const route = useRoute();
@@ -12,6 +13,12 @@
     goods.value = res.result
   }
   onMounted(() => getGoods());
+
+  // sku 规格被操作时
+  const skuChange = (sku)=> {
+    // console.log(sku);
+    
+  }
 
 </script>
 
@@ -88,11 +95,11 @@
                   </dd>
                 </dl>
               </div>
-              <!-- sku组件 -->
+                <!-- sku组件 -->
+                <XtxSku :goods="goods" @change="skuChange"/>
+                <!-- 数据组件 -->
 
-              <!-- 数据组件 -->
-
-              <!-- 按钮组件 -->
+                <!-- 按钮组件 -->
               <div>
                 <el-button size="large" class="btn">
                   加入购物车
