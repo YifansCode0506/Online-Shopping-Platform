@@ -2,6 +2,7 @@
 import axios from "axios";
 import { ElMessage } from 'element-plus'
 import { useUserStore } from "@/stores/user";
+import router from "@/router";
 import 'element-plus/theme-chalk/el-message.css'
 
 const httpInstance = axios.create({
@@ -25,11 +26,22 @@ if(token){
 
 // Axios reactive interceptor
 httpInstance.interceptors.response.use(res => res.data, e => {
+  
   // 统一错误提示
   ElMessage({
     type: 'warning',
     message: e.response.data.message,
   })
+  // 401token失效处理
+  // 1. 清除本地用户数据
+  const userStore = useUserStore();
+  if(e.response.status === 401){
+    userStore.clearUserInfo();
+    // 2. 跳转到登录页
+    router.push('/login')
+  }
+  
+  
   return Promise.reject(e);
 });
 
